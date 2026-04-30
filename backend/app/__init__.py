@@ -24,7 +24,8 @@ def create_app():
     CORS(app)
     
     # Enregistrement des routes
-    from app.routes import auth_bp
+    from app.routes import auth_bp, trans_bp
     app.register_blueprint(auth_bp, url_prefix='/auth')
+    app.register_blueprint(trans_bp, url_prefix='/transactions')
     
     return app
