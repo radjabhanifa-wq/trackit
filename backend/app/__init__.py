@@ -23,4 +23,8 @@ def create_app():
     jwt.init_app(app)
     CORS(app)
     
+    # Enregistrement des routes
+    from app.routes import auth_bp
+    app.register_blueprint(auth_bp, url_prefix='/auth')
+    
     return app
